@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>메가변리사 | 제65회 올패스 학습매니저</title>
+<style>
+:root{--navy:#172554;--blue:#315efb;--pale:#eef3ff;--ink:#202943;--muted:#7b8499;--line:#e7eaf1;--bg:#f5f7fb;--white:#fff;--green:#159b78;--orange:#f39a38;--red:#e35b62}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard","Noto Sans KR",Arial,sans-serif;font-size:14px}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0}button:disabled{opacity:.45;cursor:not-allowed}.app{max-width:1440px;margin:auto;min-height:100vh}.top{height:68px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 42px}.brand{font-size:20px;font-weight:900;color:var(--navy);letter-spacing:-1px}.brand span{color:var(--blue)}.user{color:var(--muted);font-size:13px}.layout{display:block;padding:24px 42px}.main-tabs{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border:1px solid var(--line);margin:0 0 22px;border-radius:10px;overflow:hidden}.main-tabs button{padding:16px 12px;background:#fff;color:#68738a;border-right:1px solid var(--line);font-weight:800}.main-tabs button:last-child{border-right:0}.main-tabs button.active{background:#202e68;color:#fff}.side{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;height:max-content;position:sticky;top:20px}.side h3{font-size:12px;color:#9aa2b3;margin:4px 8px 14px}.side button{width:100%;text-align:left;background:transparent;padding:13px 12px;border-radius:10px;color:#59647c;margin:2px 0}.side button.active,.side button:hover{background:var(--pale);color:var(--blue);font-weight:800}.side .sub{font-size:12px;padding-left:30px}.content{min-width:0}.pagehead{display:flex;align-items:flex-end;justify-content:space-between;margin:4px 0 22px}.eyebrow{font-size:12px;color:var(--blue);font-weight:800;letter-spacing:.4px}.pagehead h1{font-size:27px;margin:6px 0 0;letter-spacing:-1px}.pagehead p{color:var(--muted);margin:7px 0 0}.pass{background:#fff;border:1px solid var(--line);padding:9px 13px;border-radius:9px;color:#58627a}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}.card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:20px;min-width:0}.card h2{font-size:16px;margin:0 0 15px;letter-spacing:-.4px}.card h3{font-size:14px;margin:0 0 8px}.muted{color:var(--muted)}.small{font-size:12px}.blue{color:var(--blue)}.strong{font-weight:800}.hero{grid-column:span 12;background:linear-gradient(110deg,#18295f,#345fe5);color:#fff;border:0;padding:24px 28px;display:flex;align-items:center;justify-content:space-between}.hero h2{font-size:22px;margin:0 0 8px}.hero p{margin:0;color:#dce5ff}.hero .metric{font-size:34px;font-weight:900}.hero .metric small{font-size:13px;font-weight:500}.span8{grid-column:span 8}.span7{grid-column:span 7}.span6{grid-column:span 6}.span5{grid-column:span 5}.span4{grid-column:span 4}.span12{grid-column:span 12}.metricrow{display:flex;gap:10px}.metricbox{flex:1;background:#f7f8fc;border-radius:11px;padding:14px}.metricbox b{display:block;font-size:22px;margin:7px 0 3px}.progress{height:8px;background:#edf0f6;border-radius:10px;overflow:hidden;margin:9px 0}.progress i{display:block;height:100%;background:var(--blue);border-radius:10px}.course{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid #f0f1f5}.course:last-child{border:0}.book{width:42px;height:48px;border-radius:7px;background:#e8edff;color:#315efb;display:grid;place-items:center;font-weight:900}.courseinfo{flex:1}.courseinfo b{display:block;margin-bottom:4px}.course button,.outline{background:#fff;border:1px solid #dce2ef;color:#43506a;border-radius:8px;padding:8px 12px}.primary{background:var(--blue);color:#fff;border-radius:9px;padding:11px 16px;font-weight:800}.soft{background:var(--pale);color:var(--blue);border-radius:9px;padding:10px 13px;font-weight:800}.tabs{display:flex;gap:8px;border-bottom:1px solid var(--line);margin-bottom:18px;padding-bottom:10px;flex-wrap:wrap}.tabs button{background:#f3f5fa;color:#69738a;padding:10px 15px;border-radius:9px}.tabs button.active{background:var(--navy);color:#fff;font-weight:800}.navtabs{display:flex;gap:8px;margin:0 0 18px}.navtabs button{background:#fff;border:1px solid var(--line);padding:12px 18px;border-radius:10px;color:#64708a;font-weight:700}.navtabs button.active{background:var(--navy);color:#fff;border-color:var(--navy)}.task{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid #f0f1f5}.task:last-child{border:0}.task button{background:none;color:var(--blue);font-weight:800}.daybars{height:120px;display:flex;align-items:end;gap:13px;padding:8px 4px}.daybar{flex:1;text-align:center;color:var(--muted);font-size:11px}.daybar i{display:block;background:#b9caff;border-radius:6px 6px 0 0;margin:0 auto 7px;width:22px;min-height:5px}.daybar.today i{background:var(--blue)}.daybar b{display:block;color:#44506b}.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}.calendar div{padding:9px 4px;text-align:center;border-radius:8px;background:#f8f9fc;min-height:55px;font-size:12px}.calendar .done{background:#eaf1ff;color:#2453e8}.calendar .today{outline:2px solid var(--blue)}.calendar small{display:block;color:#7383a7;margin-top:4px}.badge-row{display:flex;gap:10px;flex-wrap:wrap}.badgeitem{background:#f7f8fc;border:1px solid var(--line);border-radius:12px;padding:13px;text-align:center;min-width:100px;flex:1}.badgeitem .ico{font-size:24px}.badgeitem b{display:block;margin:5px 0}.question{padding:17px;border:1px solid var(--line);border-radius:12px;margin:12px 0}.question p{font-size:15px;line-height:1.7;margin:10px 0}.choices{display:flex;gap:8px;flex-wrap:wrap}.choices button{padding:10px 18px;border:1px solid #dce2ef;border-radius:8px;background:#fff}.choices button.selected{background:var(--pale);border-color:var(--blue);color:var(--blue);font-weight:800}.feedback{padding:12px;border-radius:9px;background:#f2f8f6;margin-top:10px;line-height:1.6}.listrow{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #eff1f5;gap:12px}.listrow:last-child{border:0}.pill{font-size:11px;background:#eef2f9;color:#65718a;padding:5px 8px;border-radius:20px}.pill.green{background:#e6f6f0;color:#168564}.pill.orange{background:#fff3e5;color:#bd741d}.formrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0}.formrow label{font-weight:700;min-width:90px}.formrow select,.formrow input,.formrow textarea{border:1px solid #dce2ef;border-radius:8px;padding:10px;background:#fff;color:var(--ink)}.formrow textarea{width:100%;min-height:80px;resize:vertical}.member{display:grid;grid-template-columns:42px 1fr 90px 70px;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid #eff1f5}.avatar{width:36px;height:36px;border-radius:50%;background:#e9edfa;display:grid;place-items:center;color:#3854a2;font-weight:900}.feed{padding:13px 0;border-bottom:1px solid #eff1f5}.feedhead{display:flex;justify-content:space-between;color:#66718a;font-size:12px;margin-bottom:7px}.feed p{margin:0;line-height:1.6}.hidden{display:none!important}.notice{background:#f7f8fc;padding:12px;border-radius:9px;color:#68738a;line-height:1.6}.modalback{position:fixed;inset:0;background:#11182780;display:none;align-items:center;justify-content:center;padding:20px;z-index:9}.modalback.show{display:flex}.modal{background:#fff;border-radius:16px;padding:24px;max-width:520px;width:100%;max-height:85vh;overflow:auto}.modal h2{margin-top:0}.modalfoot{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}.toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);background:#172554;color:#fff;padding:12px 18px;border-radius:10px;display:none;z-index:20}.toast.show{display:block}table{border-collapse:collapse;width:100%;font-size:13px}td,th{text-align:left;padding:11px 8px;border-bottom:1px solid #eff1f5}th{color:#7a8499;font-weight:600}.foot{color:#a0a7b6;text-align:center;font-size:11px;padding:25px}
+@media(max-width:900px){.layout{padding:18px}.top{padding:0 18px}.span8,.span7,.span6,.span5,.span4{grid-column:span 12}.hero{align-items:flex-start;gap:20px}.pagehead h1{font-size:23px}}
+@media(max-width:560px){.layout{padding:12px}.main-tabs button{font-size:12px;padding:12px 5px}.card{padding:15px}.hero{padding:20px}.hero .metric{font-size:27px}.metricrow{flex-wrap:wrap}.metricbox{min-width:42%}.pagehead{align-items:flex-start;gap:10px;flex-direction:column}.member{grid-template-columns:35px 1fr 60px}.member>*:last-child{display:none}}
+
+.taskgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.tasktile{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:8px;min-height:145px;padding:17px;background:#fff;border:1px solid #e4e9f2;border-radius:10px;color:#27324c}.tasktile b{font-size:13px;color:#66718a}.tasktile strong{font-size:15px}.tasktile span{font-size:12px;color:#7b8499}.tasktile em{font-style:normal;color:#315efb;font-weight:800;margin-top:auto}.report-period{background:transparent;border:0;color:#64708a;padding:3px 6px;font-size:12px}.report-period.active{color:#315efb;font-weight:900}.inquiry-top{background:#fff;border:1px solid #dce2ef;border-radius:8px;padding:8px 12px;color:#26366f;font-weight:800}
+.main-tabs{box-shadow:0 2px 8px #1c2c5510}
+.hero{border-radius:0;background:#202e68;min-height:104px}
+.hero h2{font-size:22px}
+.hero .metric{font-size:34px}
+#home .grid>.card.span8{grid-column:span 6}
+#home .grid>.card.span4{grid-column:span 6}
+#home .grid>.card.span6{grid-column:span 6}
+.report-donut-wrap{display:grid;grid-template-columns:190px 1fr;align-items:center;gap:18px;margin-top:18px}
+.donut{width:176px;height:176px;border-radius:50%;background:conic-gradient(#3266f5 0 33%,#19a6a0 33% 53%,#f2a33b 53% 61%,#a85ac7 61% 74%,#e15d55 74% 84%,#9aa5ae 84% 100%);position:relative;display:grid;place-items:center;margin:auto}
+.donut:after{content:"";position:absolute;width:104px;height:104px;background:#fff;border-radius:50%}
+.donut-center{position:relative;z-index:1;text-align:center;font-weight:900;font-size:15px}
+.donut-center small{display:block;font-size:12px;color:#66718a;margin-top:4px}
+.legend{display:grid;gap:10px}.legend-row{display:flex;align-items:center;justify-content:space-between;font-size:13px}.legend-name{display:flex;align-items:center;gap:8px}.dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+.diary-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:15px 0}
+.diary-summary .metricbox{background:#eaf0fb;min-height:88px}
+.diary-switch{display:flex;align-items:center;gap:0}.diary-switch button{padding:9px 20px;background:#fff;border:1px solid #dce2ef;color:#69738a}.diary-switch button:first-child{border-radius:8px 0 0 8px}.diary-switch button:last-child{border-radius:0 8px 8px 0}.diary-switch button.active{background:#202e68;color:#fff}
+.diary-week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border:1px solid #e3e8f1;border-radius:9px;overflow:hidden;margin-top:15px}
+.diary-day{min-height:210px;padding:12px 8px;border-right:1px solid #e7eaf1;background:#fff;font-size:12px}.diary-day:last-child{border-right:0}.diary-day.today{background:#edf3ff;border:1px solid #3266f5}.diary-day b{display:block;text-align:center;margin-bottom:13px}.diary-day .plan{display:block;margin:7px 0;line-height:1.45;color:#58647b}.diary-day button{background:none;color:#3266f5;font-size:11px;padding:4px 0}
+.badge-summary{border:1px solid #e5e9f1;border-radius:10px;padding:13px 15px;margin-top:16px}.badge-summary-head{display:flex;justify-content:space-between;align-items:center;gap:8px}.badge-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:12px}.badge-chip{background:#f5f7fb;border-radius:9px;text-align:center;padding:10px 4px;font-size:11px;color:#64708a}.badge-chip .ico{font-size:22px;display:block;margin-bottom:5px}.badge-chip.earned{background:#edf3ff;color:#244fc7}
+.inquiry-modal .field{margin:13px 0}.inquiry-modal label{display:block;font-weight:800;margin-bottom:7px}.inquiry-modal input,.inquiry-modal textarea,.inquiry-modal select{width:100%;border:1px solid #dce2ef;border-radius:8px;padding:11px;background:#fff}.inquiry-modal textarea{min-height:120px;resize:vertical}.inquiry-modal .counter{text-align:right;color:#8791a5;font-size:12px;margin-top:4px}.alertline{font-size:12px;color:#9a6470;background:#fff4f4;padding:9px;border-radius:8px;line-height:1.5}
+@media(max-width:900px){#home .grid>.card.span8,#home .grid>.card.span4,#home .grid>.card.span6{grid-column:span 12}.taskgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.report-donut-wrap{grid-template-columns:160px 1fr}.diary-week{overflow-x:auto;grid-template-columns:repeat(7,minmax(105px,1fr))}}
+@media(max-width:560px){.taskgrid{grid-template-columns:1fr 1fr}.tasktile{min-height:125px;padding:12px}.diary-summary{grid-template-columns:1fr}.report-donut-wrap{grid-template-columns:1fr}.badge-strip{grid-template-columns:repeat(3,1fr)}.user{font-size:11px}.inquiry-top{padding:6px 8px}}
+
+
+/* requested refinements */
+.problem-charts{display:grid;grid-template-columns:1.25fr .9fr;gap:16px;margin-top:16px}
+.chart-panel{border:1px solid var(--line);border-radius:12px;padding:16px;background:#fff;min-width:0}
+.chart-title{font-weight:800;margin-bottom:4px}.chart-sub{font-size:12px;color:var(--muted);margin-bottom:12px}
+.trend-chart{height:170px;display:flex;align-items:flex-end;gap:12px;padding:12px 8px 0;border-bottom:1px solid #e9edf4;background:repeating-linear-gradient(to top,transparent 0,transparent 41px,#edf0f6 42px)}
+.trend-col{height:100%;flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:6px;font-size:11px;color:var(--muted)}
+.trend-col i{display:block;width:min(30px,75%);background:#9bb4ff;border-radius:6px 6px 0 0;min-height:3px}.trend-col b{font-size:11px;color:#46516a}
+.subject-bars{display:grid;gap:13px;margin-top:17px}.subject-bar{display:grid;grid-template-columns:58px 1fr 38px;align-items:center;gap:8px;font-size:12px}.subject-bar .track{height:9px;border-radius:8px;background:#edf0f6;overflow:hidden}.subject-bar .track i{display:block;height:100%;background:#4168e8;border-radius:8px}
+.diary-day,.calendar .date-cell{cursor:pointer}.diary-day:hover,.calendar .date-cell:hover{outline:2px solid #9bb4ff}
+.member-head,.mate-row{display:grid;grid-template-columns:42px minmax(120px,1.3fr) 90px 110px 110px 90px;gap:9px;align-items:center;padding:12px 0;border-bottom:1px solid #eff1f5}
+.member-head{font-size:11px;color:var(--muted);font-weight:700}.mate-row .mate-id{min-width:0}.mate-row .mate-id b{display:block}.mate-row .mate-id small{display:block;color:var(--muted);font-size:11px;margin-top:3px}.mate-row .progress{margin:0;height:7px}.mate-row .goal-cell{display:grid;grid-template-columns:1fr 34px;gap:7px;align-items:center;font-weight:800;font-size:12px}
+.summary-contrast .metricbox,.summary-contrast .metricbox *{color:#202943!important}.summary-contrast .metricbox .muted{color:#68738a!important}
+@media(max-width:760px){.problem-charts{grid-template-columns:1fr}.member-head,.mate-row{grid-template-columns:30px minmax(100px,1fr) 70px 88px;}.member-head>*:nth-child(5),.member-head>*:nth-child(6),.mate-row>*:nth-child(5),.mate-row>*:nth-child(6){display:none}}
+
+/* v5: 수강생 현황 3개 영역을 한 줄로 배치 */
+#home .grid>.card.span4{grid-column:span 4}
+.week-subjects{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:7px;margin:14px 0 18px}
+.week-subject{border:1px solid #e4e9f2;border-radius:10px;background:#f8f9fc;padding:10px 5px;text-align:center;min-width:0}
+.week-subject b{display:block;color:#778198;font-size:11px;margin-bottom:6px}
+.week-subject span{font-size:12px;font-weight:800;color:#34415f;word-break:keep-all}
+.week-subject.today{background:#eef3ff;border:1.5px solid #315efb}
+.week-subject.today b,.week-subject.today span{color:#315efb}
+.quiz-start-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:16px;padding:15px;background:#f7f8fc;border-radius:10px}
+.quiz-result{margin-top:18px;border-top:1px solid #e9edf4;padding-top:18px}
+.quiz-result-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.answer-chips{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 18px}
+.answer-chip{padding:7px 11px;border-radius:20px;font-size:12px;font-weight:800;background:#e8f0ff;color:#2458d8}
+.answer-chip.wrong{background:#fff0f0;color:#d84d56}
+.score-summary{display:grid;grid-template-columns:180px 1fr;gap:18px;align-items:center;background:#f8f9fc;border-radius:12px;padding:16px;margin:12px 0 20px}
+.score-number{text-align:center;border-right:1px solid #e4e8f0;padding:8px}
+.score-number strong{display:block;font-size:34px;color:#172554}
+.score-bars{display:flex;align-items:end;gap:10px;height:120px;padding:8px 4px 0}
+.score-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:end;height:100%;gap:5px;font-size:11px;color:#778198}
+.score-col i{display:block;width:min(100%,28px);min-height:5px;background:#aebbd5;border-radius:5px 5px 0 0}
+.score-col.mine i{background:#e35b62}
+.score-col b{font-size:11px;color:#59647b}
+.result-question{border:1px solid #e7eaf1;border-radius:12px;padding:16px;margin:12px 0}
+.result-question .result-qhead{display:flex;align-items:center;gap:8px;margin-bottom:9px}
+.result-mark{width:23px;height:23px;border-radius:50%;display:inline-grid;place-items:center;font-weight:900;background:#e8f0ff;color:#2458d8}
+.result-mark.wrong{background:#fff0f0;color:#d84d56}
+.result-question p{line-height:1.7;margin:8px 0}
+.answer-line{font-size:13px;color:#59647b;margin:7px 0 12px}
+.choice-rate{display:grid;grid-template-columns:75px 1fr 42px;gap:8px;align-items:center;margin:7px 0;font-size:12px;color:#65718a}
+.rate-track{height:9px;background:#edf0f5;border-radius:10px;overflow:hidden}
+.rate-track i{display:block;height:100%;border-radius:10px;background:#aeb7c8}
+.rate-track i.correct-rate{background:#315efb}
+.rate-track i.wrong-rate{background:#aeb7c8}
+.result-explain{background:#f7f8fc;border-radius:9px;padding:12px;margin-top:12px;line-height:1.65}
+@media(max-width:900px){#home .grid>.card.span4{grid-column:span 12}.week-subjects{grid-template-columns:repeat(4,minmax(0,1fr))}.score-summary{grid-template-columns:1fr}.score-number{border-right:0;border-bottom:1px solid #e4e8f0}}
+
+
+/* PPT 36: 자연과학 연도별 기출 카드 */
+.science-year-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:14px}
+.science-year-card{min-height:88px;background:#fff;border:1px solid #cfd6e5;border-radius:0;padding:12px;text-align:left;color:var(--ink);display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;transition:.15s}
+.science-year-card:hover{border-color:var(--blue);background:#f8faff}
+.science-year-card b{font-size:14px;margin-bottom:4px}
+.science-year-card span{font-size:11px;color:var(--muted);line-height:1.5}
+.science-note{font-size:12px;color:var(--muted);margin-top:12px}
+.rank-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.rank-panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+.rank-panel h3{font-size:14px;margin:0 0 10px}
+.rank-entry{display:flex;align-items:center;gap:14px;padding:13px 10px;background:#f3f4f7;margin:8px 0;min-height:58px}
+.rank-no{font-size:18px;font-weight:800;color:var(--navy);width:24px;text-align:center}
+.rank-desc{flex:1;min-width:0}
+.rank-desc b{display:block;font-size:13px}
+.rank-desc small{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+.rank-score{font-size:14px;font-weight:800;white-space:nowrap}
+#scienceModal .modal{max-width:760px}
+@media(max-width:800px){.science-year-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.rank-panels{grid-template-columns:1fr}}
+
+
+.global-tabs{display:flex;gap:0;border-bottom:1px solid #dbe2ef;margin:0 0 22px;background:transparent}
+.global-tabs button{background:transparent;color:#71809d;padding:13px 20px 12px;font-weight:700;border-bottom:3px solid transparent;margin-bottom:-1px}
+.global-tabs button.active{color:var(--navy);border-bottom-color:var(--blue);font-weight:900}
+.intro-page{max-width:1120px;margin:0 auto 28px}
+.intro-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin:8px 0 20px}
+.intro-head h1{font-size:26px;margin:5px 0 7px;letter-spacing:-.8px}
+.intro-head p{margin:0;color:var(--muted);line-height:1.6}
+.intro-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
+.intro-chip{border:1px solid #dce3f0;background:#fff;color:#68748e;padding:6px 10px;border-radius:20px;font-size:11px}
+.intro-chip.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.intro-hero{background:#202e68;color:#fff;border-radius:14px;padding:22px 24px;margin-bottom:14px}
+.intro-hero h2{font-size:19px;margin:0 0 8px}
+.intro-hero p{margin:0;color:#dce5ff;line-height:1.65}
+.intro-feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:14px}
+.intro-feature{background:#f4f6fb;border:1px solid #e5eaf4;border-radius:12px;padding:16px;min-height:118px}
+.intro-feature .ico{font-size:21px;margin-bottom:7px}
+.intro-feature b{display:block;font-size:14px;margin-bottom:5px;color:#1d2a4e}
+.intro-feature p{font-size:12px;color:#78849b;line-height:1.55;margin:0}
+.intro-section{background:#fff;border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:12px 0}
+.intro-section h3{font-size:15px;margin:0 0 12px;color:var(--navy)}
+.intro-section p,.intro-section li{font-size:12px;line-height:1.7;color:#52617d}
+.intro-section ul{margin:7px 0 0;padding-left:20px}
+.intro-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.intro-type{background:#f7f8fc;border-radius:11px;padding:15px}
+.intro-type h4{margin:0 0 7px;font-size:14px;color:var(--navy)}
+.intro-type p{margin:0 0 6px}
+.intro-pill{display:inline-block;border-radius:20px;background:#e7f6f1;color:#18866d;padding:5px 9px;font-size:11px;margin-top:8px}
+.intro-steps{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+.intro-steps span{background:#eaf0ff;color:#315efb;border-radius:20px;padding:8px 12px;font-size:12px;font-weight:800}
+.intro-faq{border-top:1px solid #edf0f5;padding:10px 0}
+.intro-faq:first-of-type{border-top:0}
+.intro-faq b{font-size:12px;color:#29395f}
+.intro-faq p{margin:5px 0 0}
+@media(max-width:760px){.intro-feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.intro-two{grid-template-columns:1fr}.intro-head{display:block}.intro-head .pass{display:inline-block;margin-top:12px}.global-tabs button{flex:1;padding-left:8px;padding-right:8px}}
+@media(max-width:480px){.intro-feature-grid{grid-template-columns:1fr}.intro-page{margin-left:0;margin-right:0}}
+
+.alarm-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #e8ecf5;font-size:14px}
+.sw{width:42px;height:24px;border-radius:12px;background:#cdd3e0;position:relative;cursor:pointer;flex:none;transition:.2s}
+.sw:after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.2s}
+.sw.on{background:#315efb}.sw.on:after{left:21px}.sw.lock{opacity:.5;cursor:not-allowed}
+.alarm-times{display:flex;gap:14px;flex-wrap:wrap;font-size:14px}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top"><div class="brand">메가변리사 올패스 학습매니저</div><div class="user"><button class="inquiry-top" onclick="openInquiry()">💬 문의하기</button>　 제65회 1차 올패스 학습매니저　 |　 mega011 님　⌄</div></header>
+<div class="layout">
+<main class="content">
+<div class="global-tabs" role="tablist" aria-label="학습매니저 메뉴">
+  <button type="button" data-global="intro">학습매니저 소개</button>
+  <button type="button" data-global="manager" class="active">올패스 학습매니저</button>
+</div>
+<section id="introPage" class="intro-page hidden">
+  <div class="intro-head">
+    <div>
+      <div class="eyebrow">MEGA ALLPASS LEARNING MANAGER</div>
+      <h1>올패스 학습매니저</h1>
+      <p>강의만 들어도 쌓이는 학습 기록, 매일 5문항, 출석과 다이어리, 같은 유형·과목의 수강생과 함께하는 한 달 스터디.</p>
+      <div class="intro-meta">
+        <span class="intro-chip">기획·회원 구분</span><span class="intro-chip active">구매 회원</span><span class="intro-chip">비구매 회원</span>
+        <span class="intro-chip">회차</span><span class="intro-chip active">1차 올패스</span><span class="intro-chip">2차 올패스</span>
+      </div>
+    </div>
+    <div class="pass">제65회 1차 올패스</div>
+  </div>
+
+  <div class="intro-hero">
+    <h2>올패스 학습매니저</h2>
+    <p>강의만 들어도 쌓이는 학습 기록, 매일 5문항, 출석과 다이어리, 같은 유형·과목의 수강생과 함께하는 한 달 스터디.</p>
+  </div>
+
+  <div class="intro-feature-grid">
+    <article class="intro-feature"><div class="ico">📊</div><b>자동으로 쌓이는 학습 기록</b><p>강의만 들어도 강의 시간·진도율·출석이 자동으로 기록돼요.</p></article>
+    <article class="intro-feature"><div class="ico">✍️</div><b>오늘의 문제 5문항</b><p>요일별 과목 OX 5문항을 풀고, 모든 같은 문제의 점수 분포와 선택률을 확인해요.</p></article>
+    <article class="intro-feature"><div class="ico">§</div><b>조문·판례 바로 보기</b><p>해설 속 근거 조문과 판례를 클릭하면 페이지 이동 없이 확인할 수 있어요.</p></article>
+    <article class="intro-feature"><div class="ico">🔬</div><b>자연과학 기출 풀이</b><p>물리·화학·생물·지구과학 기출을 단원별·연도별로 풀어볼 수 있어요.</p></article>
+    <article class="intro-feature"><div class="ico">🤝</div><b>스터디메이트</b><p>한 달 동안 같은 유형·과목의 수강생과 자동으로 반을 이루고, 완주하면 휴무권을 받아요.</p></article>
+    <article class="intro-feature"><div class="ico">🗓️</div><b>출석·다이어리·휴무권</b><p>할 일을 계획하고 체크해요. 한 달 개근하면 휴무권을 받을 수 있어요.</p></article>
+  </div>
+
+  <section class="intro-section">
+    <h3>스터디메이트 · 어떤 반이 있나요?</h3>
+    <p>한 달 동안 같은 유형·과목의 수강생과 함께 목표를 세우고 완주해요. 유형과 과목에 따라 반이 구성됩니다.</p>
+    <div class="intro-two">
+      <div class="intro-type">
+        <h4>🌿 생활형</h4><p>학습 목표 없이 꾸준함이 목표인 반이에요.</p>
+        <ul><li>하루 1강 듣기, 매일 5문항</li><li>기상 인사와 공부 인증을 자유롭게 공유</li><li>완주 기준: 한 달 출석 90%</li></ul>
+        <span class="intro-pill">신청 인원에 따라 개설</span>
+      </div>
+      <div class="intro-type">
+        <h4>📚 학습형</h4><p>과목을 정하고 이번 달 목표 강좌를 함께 끝내는 반이에요.</p>
+        <ul><li>같은 과목끼리 반 구성</li><li>목표 분량의 90% 이상 수강 시 완주</li><li>개인 목표는 한 달 20강부터 설정</li></ul>
+        <span class="intro-pill" style="background:#eef2fb;color:#58709d">목표 강좌 선택</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro-section">
+    <h3>완주 · 규칙</h3>
+    <ul>
+      <li>완주 보상: 기수 완주 시 휴무권 지급(반원에게 공개)</li>
+      <li>7일 연속 출석이 없으면 자리 반납(5일째 알림톡 사전 안내) · 생활형·학습형 공통</li>
+      <li>중간 합류: 반이 열리지 않아 대기 중인 신청자가 기수 시작 후 1~14일에 자리 반납이 생긴 같은 유형·과목 반에 대기 순서대로 합류 · 생활형은 합류일부터 말일까지 출석 90%, 학습형은 합류할 때 정한 목표의 90% 수강</li>
+      <li>반 개설: 같은 유형·과목 신청자가 4명 이상이면 개설돼요(정원 최대 7명).</li>
+      <li>반원이 2명 이하로 줄어들면 다른 반으로 이동할 수 있어요.</li>
+    </ul>
+  </section>
+
+  <section class="intro-section">
+    <h3>출석 · 휴무권</h3>
+    <ul>
+      <li>출석: 하루 10분 이상 수강하거나, 오늘의 문제·자연과학 기출을 합쳐 5문항 이상 풀면 자동 출석돼요.</li>
+      <li>휴무권: 한 달 개근하면 다음 달 1일에 1장 지급돼요. 최대 3장까지 보유할 수 있어요.</li>
+      <li>휴무권을 사용하면 가장 최근 결석일의 연속 출석 기록을 복구할 수 있어요. 휴무권 사용일은 누적 출석·개근·출석 뱃지에 포함되지 않아요.</li>
+    </ul>
+  </section>
+
+  <section class="intro-section">
+    <h3>알림 설정</h3>
+    <ul>
+      <li>필수 알림톡 4종(해제 불가): 기수 결과(매월 1일) · 다음 기수 신청 오픈(매월 23일) · 중간 합류 배정 · 자리 반납 사전 안내(미출석 5일째)</li>
+      <li>선택 알림톡 2종(기본 OFF): 오늘의 문제 리마인드(그날 풀지 않았을 때만) · 스터디 출석 리마인드(스터디 참여 중이며 출석 전일 때만)</li>
+      <li>선택 알림을 켤 때 알림톡 수신 동의 안내가 나와요. 받을 시간은 오전 8시 · 낮 12시 · 저녁 6시(기본) · 밤 9시 중에서 고를 수 있어요.</li>
+    </ul>
+  </section>
+
+  <section class="intro-section">
+    <h3>다이어리 · 문제 풀이</h3>
+    <ul>
+      <li>다이어리: 할 일을 계획하고 체크해요. 매일·요일 반복, 주간(기본)·월간 보기로 학습 계획과 출석을 확인할 수 있어요.</li>
+      <li>문제 풀이: 매일 5문항(해당 과목 전 범위에서 무작위 출제)을 풀고 점수 분포와 선택률, 최근 7일 맞힌 개수 그래프, 오답노트를 확인해요.</li>
+      <li>자연과학 기출: 물리·화학·생물·지구과학 과목별 기출을 연도별로 풀고 해설을 확인해요.</li>
+    </ul>
+  </section>
+
+  <section class="intro-section">
+    <h3>구매 · 비구매 회원 비교</h3>
+    <div class="intro-two">
+      <div class="intro-type"><h4>비구매 회원</h4><p>오늘의 문제 체험만 가능해요.</p></div>
+      <div class="intro-type"><h4>올패스 구매 회원</h4><p>나의 학습 · 문제 풀이 전체 · 다이어리 · 오답노트 · 스터디메이트를 이용할 수 있어요.</p></div>
+    </div>
+  </section>
+
+  <section class="intro-section">
+    <h3>자주 묻는 질문</h3>
+    <div class="intro-faq"><b>Q. 휴무권은 어떻게 받나요?</b><p>한 달 동안 개근하면 다음 달 1일에 1장 지급돼요. 최대 3장까지 보유할 수 있어요.</p></div>
+    <div class="intro-faq"><b>Q. 신청자가 적으면 반이 개설되지 않나요?</b><p>같은 유형·과목의 신청 인원이 개설 기준에 도달하면 반이 만들어져요. 개설되지 않으면 같은 유형·과목 반이 개설된 경우에 한해 기수 시작 후 1~14일 중간 합류를 대기할 수 있고, 반이 하나도 없는 과목은 다음 기수에 우선 배정돼요.</p></div>
+  </section>
+
+  <section class="intro-section">
+    <h3>이용 방법</h3>
+    <div class="intro-steps"><span>① 올패스 구매</span>›<span>② 마이페이지 배너 클릭</span>›<span>③ 학습매니저 학습 관리</span></div>
+  </section>
+
+  <section class="intro-section">
+    <h3>이용 안내</h3>
+    <ul>
+      <li>이용 대상: 제65회 올패스 결제 회원(환불·취소 회원 제외)</li>
+      <li>비구매 회원은 오늘의 문제 체험만 가능하며, 스터디메이트·다이어리 등 전체 기능은 올패스 구매 회원에게 제공돼요.</li>
+      <li>학습매니저는 부가 서비스로 운영 정책은 변경될 수 있어요.</li>
+    </ul>
+  </section>
+</section>
+<div id="managerApp">
+<div class="main-tabs">
+  <button class="active" data-page="home">📊 나의 학습</button>
+  <button data-page="problem">✍ 문제 풀이</button>
+  <button data-page="study">🤝 스터디메이트</button>
+</div>
+<section id="home" class="page">
+<div class="pagehead"><div><div class="eyebrow">MEGA ALLPASS LEARNING MANAGER</div><h1>나의 학습 현황</h1><p>학습의 흐름이 끊기지 않도록, 오늘의 기록을 확인해 보세요.</p></div><div class="pass">제65회 1차 올패스　⌄</div></div>
+<div class="grid">
+<div class="card hero"><div><h2>김메가님! 오늘도 차근차근 쌓아가는 중이에요. 👋</h2><p>오늘 강의 %1시간 20분% 들었어요. 오늘 1차 올패스 수강생 312명이 공부 중이에요
+</p></div><div class="metric">D-99 <small>시험일까지</small><br><button class="soft" style="margin-top:8px;font-size:13px;font-weight:700;padding:7px 12px" onclick="showModal('alarmModal')">⚙ 알림 설정</button></div></div>
+<div class="card span12"><h2>오늘 할 일 <span class="muted small">· 10월 23일 (금)</span></h2>
+<div class="taskgrid">
+  <button class="tasktile" onclick="go('problem','daily')"><b>오늘의 문제</b><strong>아직 풀지 않았어요</strong><span>특허법 OX 5문항</span><em>문제 풀기 ›</em></button>
+  <button class="tasktile" onclick="go('problem','wrong')"><b>오답 다시 풀기</b><strong>최근 7일 3문항</strong><span>다시 풀지 않은 오답</span><em>오답노트 ›</em></button>
+  <button class="tasktile" onclick="go('study','apply')"><b>스터디메이트</b><strong>11월 기수 신청</strong><span>신청 기간 10.23~10.31</span><em>참여 신청 ›</em></button>
+  <button class="tasktile" onclick="openPlanModal()"><b>오늘 다이어리</b><strong>오늘 4개 중 1개 완료</strong><span>오늘의 계획을 확인해요</span><em>다이어리 보기 ›</em></button>
+</div></div>
+<div class="card span6"><h2>나의 수강 중인 강좌 <span class="muted small">· 최근 수강순</span></h2>
+<div class="course"><div class="book">특허법</div><div class="courseinfo"><b>특허법 기본강의 <span class="muted small">· 박지환</span></b><div class="progress"><i style="width:70%"></i></div><span class="small muted">70% 수강</span></div><button onclick="toast('특허법 기본강의 이어듣기를 선택했어요.')">이어듣기</button></div>
+<div class="course"><div class="book">물리</div><div class="courseinfo"><b>물리 핵심정리 <span class="muted small">· 김동훈</span></b><div class="progress"><i style="width:45%"></i></div><span class="small muted">45% 수강</span></div><button onclick="toast('물리 핵심정리 이어듣기를 선택했어요.')">이어듣기</button></div>
+<div class="course"><div class="book">상표법</div><div class="courseinfo"><b>상표법 기본강의 <span class="muted small">· 최지환</span></b><div class="progress"><i style="width:38%"></i></div><span class="small muted">38% 수강</span></div><button onclick="toast('상표법 기본강의 이어듣기를 선택했어요.')">이어듣기</button></div>
+<div class="course"><div class="book">민법</div><div class="courseinfo"><b>민법 총칙·물권 <span class="muted small">· 정연석</span></b><div class="progress"><i style="width:20%"></i></div><span class="small muted">20% 수강</span></div><button onclick="toast('민법 총칙·물권 이어듣기를 선택했어요.')">이어듣기</button></div>
+<div class="course"><div class="book">디자인보호법</div><div class="courseinfo"><b>디자인보호법 정리 <span class="muted small">· 유시훈</span></b><div class="progress"><i style="width:12%"></i></div><span class="small muted">12% 수강</span></div><button onclick="toast('디자인보호법 정리 이어듣기를 선택했어요.')">이어듣기</button></div>
+</div>
+<div class="card span6"><h2>학습 리포트 <span class="muted small">· <button class="report-period active" onclick="setReportPeriod('week',this)">이번주</button> <button class="report-period" onclick="setReportPeriod('month',this)">이번달</button></span></h2><div class="metricrow"><div class="metricbox"><span class="small muted">강의 시간</span><b>8h 35m</b></div><div class="metricbox"><span class="small muted">출석</span><b>5일</b></div><div class="metricbox"><span class="small muted">강의 시간 변화</span><b class="blue">+8%</b></div></div><div class="daybars"><div class="daybar"><i style="height:34px"></i>월<b>1h</b></div><div class="daybar"><i style="height:26px"></i>화<b>1h</b></div><div class="daybar"><i style="height:68px"></i>수<b>2h</b></div><div class="daybar"><i style="height:39px"></i>목<b>1h</b></div><div class="daybar today"><i style="height:78px"></i>금<b>2h</b></div><div class="daybar"><i style="height:3px"></i>토<b>-</b></div><div class="daybar"><i style="height:3px"></i>일<b>-</b></div></div>
+<div class="report-donut-wrap">
+  <div class="donut"><div class="donut-center">민법<small>33%</small></div></div>
+  <div class="legend">
+    <div class="legend-row"><span class="legend-name"><i class="dot" style="background:#3266f5"></i>민법</span><b>33%</b></div>
+    <div class="legend-row"><span class="legend-name"><i class="dot" style="background:#19a6a0"></i>특허법</span><b>20%</b></div>
+    <div class="legend-row"><span class="legend-name"><i class="dot" style="background:#f2a33b"></i>화학</span><b>8%</b></div>
+    <div class="legend-row"><span class="legend-name"><i class="dot" style="background:#a85ac7"></i>생물</span><b>13%</b></div>
+    <div class="legend-row"><span class="legend-name"><i class="dot" style="background:#e15d55"></i>상표법</span><b>10%</b></div>
+    <div class="legend-row"><span class="legend-name"><i class="dot" style="background:#9aa5ae"></i>기타</span><b>16%</b></div>
+  </div>
+</div><div class="notice">누적 강의 시간 <b>120h</b>　· 상위 28%　· 올패스 평균 98h</div></div>
+<div class="card span12" id="diary">
+<h2>출석 · 다이어리</h2>
+<div class="diary-summary">
+  <div class="metricbox"><span class="small muted">연속 출석 ⓘ</span><b>연속 5일</b><span class="small muted">하루 10분 이상 수강하거나 문제 5문항을 풀면 자동 출석돼요. 전날 출석은 익일 오전 1시에 최종 확정돼요.</span></div>
+  <div class="metricbox"><span class="small muted">휴무권 ⓘ</span><b>1 / 3장</b><span class="small muted">한 달 개근하면 다음 달 1일 1장 지급</span><button class="soft" style="margin-top:7px" onclick="showModal('restTicketModal')">휴무권 사용</button></div>
+  <div class="metricbox"><span class="small muted">출석 뱃지</span><b>3개 획득</b><span class="small muted">출석 뱃지 현황을 확인해 보세요.</span><button class="soft" style="margin-top:7px" onclick="showModal('badgeModal')">뱃지 보기 ›</button></div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:8px 0 12px">
+  <div class="diary-switch"><button class="active" id="weekViewBtn" onclick="setDiaryView('week')">주간</button><button id="monthViewBtn" onclick="setDiaryView('month')">월간</button></div>
+  <div style="display:flex;align-items:center;gap:12px"><button class="outline" onclick="shiftDiary(-1)">‹</button><b id="diaryPeriod">10.19 ~ 10.25</b><button class="outline" onclick="shiftDiary(1)">›</button><button class="primary" onclick="openPlanModal()">계획 세우기</button></div>
+</div>
+<p class="small muted">하루 10분 이상 수강하거나 문제 5문항을 풀면 자동 출석돼요. 전날 출석은 익일 오전 1시에 최종 확정돼요.</p>
+<div id="diaryWeek" class="diary-week">
+  <div class="diary-day" onclick="openDiaryForDate('19 월')"><b>19 월</b><span class="plan">☑ 민법 1강 듣기</span><span class="plan">☐ 특허법 복습 30분</span><button onclick="event.stopPropagation();openPlanModal()">자세히</button></div>
+  <div class="diary-day" onclick="openDiaryForDate('20 화')"><b>20 화</b><span class="plan">☑ 민법 1강 듣기</span><span class="plan">☐ 특허법 복습 30분</span><button onclick="event.stopPropagation();openPlanModal()">자세히</button></div>
+  <div class="diary-day" onclick="openDiaryForDate('21 수')"><b>21 수</b><span class="plan">☑ 민법 1강 듣기</span><span class="plan">☐ 특허법 복습 30분</span><button onclick="event.stopPropagation();openPlanModal()">자세히</button></div>
+  <div class="diary-day" onclick="openDiaryForDate('22 목')"><b>22 목</b><span class="plan">☑ 민법 1강 듣기</span><span class="plan">☐ 특허법 복습 30분</span><button onclick="event.stopPropagation();openPlanModal()">자세히</button></div>
+  <div class="diary-day today" onclick="openDiaryForDate('23 금')"><b>23 금</b><span class="plan">☑ 민법 1강 듣기</span><span class="plan">☐ 특허법 복습 30분</span><button onclick="event.stopPropagation();openPlanModal()">자세히</button></div>
+  <div class="diary-day" onclick="openDiaryForDate('24 토')"><b>24 토</b><span class="plan">계획 없음</span><button onclick="event.stopPropagation();openPlanModal()">+ 계획 추가</button></div>
+  <div class="diary-day" onclick="openDiaryForDate('25 일')"><b>25 일</b><span class="plan">계획 없음</span><button onclick="event.stopPropagation();openPlanModal()">+ 계획 추가</button></div>
+</div>
+<div id="diaryMonth" class="calendar hidden"></div>
+</div>
+<div class="card span4"><h2>올패스 수강생 현황 <span class="muted small">· 주간</span></h2><h3 style="margin-top:4px">인기 강좌 TOP 3</h3><p class="small muted">해당 강좌의 강의를 재생한 회원 수(1인 1회) · 전주 7일 기준</p><div class="listrow"><span>1　특허법 기본강의 <span class="muted small">· 128명</span></span><button class="outline" onclick="toast('강좌 담기 팝업이 열립니다.')">수강하기</button></div><div class="listrow"><span>2　민법 핵심정리 <span class="muted small">· 97명</span></span><button class="outline" onclick="toast('강좌 담기 팝업이 열립니다.')">수강하기</button></div><div class="listrow"><span>3　상표법 기본강의 <span class="muted small">· 81명</span></span><button class="outline" onclick="toast('강좌 담기 팝업이 열립니다.')">수강하기</button></div></div>
+<div class="card span4"><h2>누적 출석 TOP 5</h2><p class="small muted">올패스 수강생 누적 출석일 기준</p><div class="listrow"><b>🥇 1. study***</b><strong>186일</strong></div><div class="listrow"><b>🥈 2. pass***</b><strong>174일</strong></div><div class="listrow"><b>🥉 3. law***</b><strong>162일</strong></div><div class="listrow"><span>4. mega***</span><strong>158일</strong></div><div class="listrow"><span>5. exam***</span><strong>151일</strong></div></div>
+<div class="card span4"><h2>누적 강의 시간 TOP 5</h2><p class="small muted">올패스 수강생 누적 강의 시간 기준</p><div class="listrow"><b>🥇 1. law***</b><strong>428h 20m</strong></div><div class="listrow"><b>🥈 2. study***</b><strong>412h 10m</strong></div><div class="listrow"><b>🥉 3. pass***</b><strong>396h 45m</strong></div><div class="listrow"><span>4. mega***</span><strong>382h 30m</strong></div><div class="listrow"><span>5. exam***</span><strong>371h 05m</strong></div></div>
+</div>
+</section>
+
+<section id="problem" class="page hidden">
+<div class="pagehead"><div><div class="eyebrow">LEARNING PRACTICE</div><h1>문제 풀이</h1><p>매일 5문항씩 풀고, 틀린 문제는 오답노트에서 다시 확인해 보세요.</p></div><div class="pass">제65회 1차 올패스</div></div>
+<div class="navtabs"><button class="active" data-probtab="daily">오늘의 문제</button><button data-probtab="science">자연과학 기출 풀이</button><button data-probtab="wrong">오답노트 <span id="wrongCount"></span></button></div>
+<div id="dailyTab" class="probtab">
+<div class="problem-charts">
+ <div class="chart-panel"><div class="chart-title">최근 7일 문제 풀이 점수</div><div class="chart-sub">일별 정답 문항 수 · 5문항 기준</div><div class="trend-chart"><div class="trend-col"><i style="height:48%"></i><b>월</b><span>2/5</span></div><div class="trend-col"><i style="height:70%"></i><b>화</b><span>3/5</span></div><div class="trend-col"><i style="height:88%"></i><b>수</b><span>4/5</span></div><div class="trend-col"><i style="height:62%"></i><b>목</b><span>3/5</span></div><div class="trend-col"><i style="height:78%"></i><b>금</b><span>4/5</span></div><div class="trend-col"><i style="height:42%"></i><b>토</b><span>2/5</span></div><div class="trend-col"><i style="height:96%;background:#315efb"></i><b>일</b><span>5/5</span></div></div></div>
+ <div class="chart-panel"><div class="chart-title">과목별 정답률</div><div class="chart-sub">최근 풀이 기준 · 시연용 데이터</div><div class="subject-bars"><div class="subject-bar"><b>민법</b><div class="track"><i style="width:82%"></i></div><span>82%</span></div><div class="subject-bar"><b>특허법</b><div class="track"><i style="width:76%"></i></div><span>76%</span></div><div class="subject-bar"><b>상표법</b><div class="track"><i style="width:68%"></i></div><span>68%</span></div><div class="subject-bar"><b>디자인</b><div class="track"><i style="width:74%"></i></div><span>74%</span></div><div class="subject-bar"><b>자연과학</b><div class="track"><i style="width:61%"></i></div><span>61%</span></div></div></div>
+</div>
+<div class="card"><div style="display:flex;justify-content:space-between;align-items:center"><div><h2>오늘의 문제 · 10월 23일 (금)</h2><p class="muted small">특허법 OX 5문항 · 첫 풀이만 학습 현황과 출석에 반영돼요. 문제는 해당 과목 전 범위에서 무작위로 출제돼 아직 수강하지 않은 단원이 나올 수 있어요.</p></div><span class="pill orange">미참여</span></div>
+<h3 style="margin-top:18px">요일별 오늘의 문제 과목</h3>
+<div class="week-subjects">
+ <div class="week-subject"><b>월요일</b><span>민법</span></div><div class="week-subject"><b>화요일</b><span>특허법</span></div><div class="week-subject"><b>수요일</b><span>민법</span></div><div class="week-subject"><b>목요일</b><span>상표법</span></div><div class="week-subject today"><b>금요일 · 오늘</b><span>특허법</span></div><div class="week-subject"><b>토요일</b><span>민법</span></div><div class="week-subject"><b>일요일</b><span>디자인보호법</span></div>
+</div>
+<div class="metricrow"><div class="metricbox"><span class="small muted">오늘 과목</span><b>특허법</b></div><div class="metricbox"><span class="small muted">문항 수</span><b>5문항</b></div><div class="metricbox"><span class="small muted">최근 7일 평균</span><b>3.8 / 5</b></div></div>
+<div class="quiz-start-row" id="quizStart"><div><b>오늘의 문제를 풀어보세요.</b><div class="small muted" style="margin-top:5px">5문항을 모두 선택하면 결과와 해설을 확인할 수 있어요.</div></div><button class="primary" onclick="startTodayQuiz()">오늘의 문제 풀기</button></div>
+<div id="quizArea" class="hidden"><div id="quizQuestions"></div><div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:18px"><span id="answered" class="muted small">0 / 5 문항 입력 완료</span><button class="primary" id="submitQuizBtn" onclick="submitQuiz()" disabled>제출하고 결과 보기</button></div></div><div id="quizResult"></div></div>
+
+</div>
+<div id="scienceTab" class="probtab hidden">
+<div class="card"><h2>자연과학 기출 풀이</h2><p class="muted small">오늘의 문제와 합쳐 하루 5문항 이상 풀면 출석으로 인정돼요. 틀린 문항은 오답노트에 함께 저장돼요.</p><div class="tabs" id="scienceSubjects"><button class="active" data-subject="물리">물리</button><button data-subject="화학">화학</button><button data-subject="생물">생물</button><button data-subject="지구과학">지구과학</button></div><h3 id="scienceTitle">물리 기출문제</h3><div class="small muted">연도별로 풀기　회차당 10문항</div><div id="scienceYears" class="science-year-grid"></div><div class="science-note">틀린 문항은 오답노트에 함께 저장돼요.</div></div>
+</div>
+<div id="wrongTab" class="probtab hidden">
+<div class="card"><h2>오답노트</h2><p class="muted small">최근 7일 안에 다시 풀지 않은 오답은 오늘 할 일에 표시돼요.</p><div class="formrow"><label>과목 필터</label><select id="wrongFilter" onchange="filterWrong()"><option>전체 과목</option><option>민법</option><option>특허법</option><option>상표법</option><option>물리</option></select></div><div id="wrongList"></div></div>
+</div>
+</section>
+
+<section id="study" class="page hidden">
+<div class="pagehead"><div><div class="eyebrow">STUDY MATE</div><h1>스터디메이트</h1><p>같은 유형·과목의 수강생과 한 달 동안 함께 완주해요.</p></div><div class="pass">11월 기수 신청 · 10.23~10.31</div></div>
+<div class="navtabs"><button data-studytab="apply" onclick="studyTab('apply')">참여 신청</button><button data-studytab="group" onclick="studyTab('group')">스터디룸</button></div>
+<div id="introTab" class="studyTab">
+<div class="grid">
+<div class="card span12" style="background:linear-gradient(110deg,#1d2c62,#3e62d9);color:white"><h2 style="font-size:22px">혼자보다 함께, 한 달 완주에 도전해요!</h2><p style="color:#e0e7ff">유형·과목·목표를 선택하면 같은 목표를 가진 팀원들과 자동으로 반이 배정돼요.</p><div class="metricrow summary-contrast" style="margin-top:20px"><div class="metricbox"><span class="small">진행 중인 기수</span><b>10월 기수</b></div><div class="metricbox"><span class="small">다음 기수 신청</span><b>10.23~10.31</b></div><div class="metricbox"><span class="small">기수 시작</span><b>11.1 (일)</b></div></div></div>
+<div class="card span6"><h2>🌿 생활형</h2><p>학습 목표 없이 꾸준함이 목표인 반이에요.</p><ul><li>하루 1강 듣기, 매일 5문항</li><li>기상 인사와 공부 인증을 자유롭게 공유</li><li>완주 기준: 한 달 출석 90%</li></ul><span class="pill green">신청 9명 · 개설 가능</span></div>
+<div class="card span6"><h2>📚 학습형</h2><p>과목을 정하고 이번 달 목표 강좌를 함께 끝내는 반이에요.</p><ul><li>같은 과목끼리 반 구성</li><li>목표 분량의 90% 이상 수강 시 완주</li><li>목표는 한 달 20강부터 설정</li></ul><span class="pill">목표 강좌 선택</span></div>
+<div class="card span12"><h2>스터디메이트 이용 방법</h2><div class="metricrow"><div class="metricbox"><b>01</b><span>유형·과목·목표 신청</span></div><div class="metricbox"><b>02</b><span>4~7명 자동 반 배정</span></div><div class="metricbox"><b>03</b><span>한 달 동안 함께 학습</span></div><div class="metricbox"><b>04</b><span>목표 90% 달성 시 완주</span></div></div><div class="notice" style="margin-top:14px">완주하면 휴무권이 제공돼요. 생활형은 한 달 출석 90%, 학습형은 목표 분량 90% 수강이 기준이에요.</div><div style="margin-top:18px"><button class="primary" onclick="studyTab('apply')">11월 기수 참여 신청</button> <button class="outline" onclick="studyTab('group')">스터디룸 확인</button></div></div>
+<div class="card span12"><h2>🏆 10월 기수 반 랭킹 TOP 3</h2>
+<div class="rank-panels">
+ <div class="rank-panel"><h3>🌿 생활형 · 반 평균 출석률</h3>
+  <div class="rank-entry"><span class="rank-no">1</span><div class="rank-desc"><b>10월 기수 · 생활형 5반</b><small>반원 6명</small></div><strong class="rank-score">96%</strong></div>
+  <div class="rank-entry"><span class="rank-no">2</span><div class="rank-desc"><b>10월 기수 · 생활형 7반</b><small>반원 5명</small></div><strong class="rank-score">93%</strong></div>
+  <div class="rank-entry"><span class="rank-no">3</span><div class="rank-desc"><b>10월 기수 · 생활형 1반</b><small>반원 7명</small></div><strong class="rank-score">91%</strong></div>
+ </div>
+ <div class="rank-panel"><h3>📚 학습형 · 반 평균 목표 진도율</h3>
+  <div class="rank-entry"><span class="rank-no">1</span><div class="rank-desc"><b>10월 기수 · 민법 2반</b><small>반원 7명</small></div><strong class="rank-score">96%</strong></div>
+  <div class="rank-entry"><span class="rank-no">2</span><div class="rank-desc"><b>10월 기수 · 산업재산권법 5반</b><small>반원 4명</small></div><strong class="rank-score">93%</strong></div>
+  <div class="rank-entry"><span class="rank-no">3</span><div class="rank-desc"><b>10월 기수 · 자연과학 1반</b><small>반원 7명</small></div><strong class="rank-score">91%</strong></div>
+ </div>
+</div></div>
+</div></div>
+<div id="applyTab" class="studyTab hidden">
+<div class="card"><h2>11월 기수 참여 신청</h2><p class="muted small">신청 기간 10.23~10.31 · 기수 시작 11.1 · 한 달에 한 개의 스터디 그룹에 참여할 수 있어요.</p>
+<div class="formrow"><label>스터디 유형</label><select id="studyType" onchange="updateApply()"><option value="생활형">생활형</option><option value="학습형">학습형</option></select></div>
+<div id="subjectRow" class="formrow hidden"><label>과목</label><select id="studySubject"><option>민법</option><option>산업재산권법</option><option>자연과학</option></select></div>
+<div id="goalRow" class="hidden"><div class="formrow"><label>목표 강좌</label><select id="studyCourse"><option>기본이론</option><option>객관식</option><option>사례강의</option></select></div><div class="formrow"><label>이번 달 목표</label><button class="outline" onclick="changeGoal(-1)">−</button><b id="goalNum">20</b>강<button class="outline" onclick="changeGoal(1)">＋</button></div><p class="small muted" id="goalRule">완주 기준 : 18강 이상 수강 (목표의 90%)</p></div>
+<div class="notice" id="typeDesc">하루 1강 듣기, 매일 5문항, 기상 인사 등 자유롭게 나누는 생활형 스터디예요. 완주 기준은 한 달 출석 90%입니다.</div>
+<div class="formrow" style="margin-top:18px"><label style="min-width:unset"><input type="checkbox" id="agree"> 반원에게 공개되는 항목에 동의합니다. (필수)</label></div>
+<div class="notice small" style="margin-bottom:10px">신청자가 4명 미만이면 반이 열리지 않고, 같은 유형·과목 반이 개설된 경우에 한해 기수 시작 후 1~14일 사이 자리 반납이 생기면 대기 순서대로 중간 합류해요. 반이 하나도 없는 과목은 다음 기수에 우선 배정돼요.</div><div class="notice small">공개 항목: 아이디(일부 비공개), 스터디 톡톡, 오늘 출석 여부, 연속·누적 출석일, 출석 뱃지, 강의 시간, 전체 진도율, 유형·과목·목표·진도, 오늘의 문제 참여 여부, 기수 완주 뱃지</div>
+<div style="margin-top:18px"><button class="primary" onclick="applyStudy()">11월 기수 신청하기</button></div><div id="applyDone" class="feedback hidden"></div></div>
+</div>
+<div id="groupTab" class="studyTab hidden">
+<div id="noGroup" class="card hidden"><h2>아직 참여 중인 스터디가 없어요.</h2><p class="muted">11월 기수에 참여 신청하고 함께 공부해 보세요.</p><button class="primary" onclick="studyTab('apply')">참여 신청</button></div>
+<div id="myGroup" class="hidden">
+<div class="card"><div style="display:flex;justify-content:space-between;gap:10px;align-items:center"><div><span class="pill green">진행 중</span><h2 style="margin:10px 0 5px">11월 기수 · 민법 7반</h2><p class="muted small">반원 7명 · 12일째 진행 중 · 기수 종료 11.30</p></div><b class="blue">D-18</b></div><div class="metricrow"><div class="metricbox"><span class="small muted">반 평균 목표 진도</span><b>42%</b></div><div class="metricbox"><span class="small muted">오늘 출석한 반원</span><b>6 / 7명</b></div><div class="metricbox"><span class="small muted">내 완주 진행</span><b>8 / 20강</b></div></div><div class="progress"><i style="width:40%"></i></div><p class="small muted">완주 기준 18강 · 목표의 90%</p></div>
+<div class="card" style="margin-top:16px"><h2>메이트 현황</h2><p class="small muted">오늘의 참여 현황과 이번 달 학습 진도를 확인할 수 있어요.</p>
+<div class="member-head"><span>#</span><span>아이디 · 목표</span><span>오늘 출석</span><span>오늘의 문제</span><span>목표 진도</span><span>이번 달 강의 시간</span></div>
+<div class="mate-row"><div class="avatar">S</div><div class="mate-id"><b>stu***</b><small>민법 기본이론 20강</small></div><span class="pill green">출석</span><span class="pill green">참여 완료</span><div class="goal-cell"><div class="progress"><i style="width:100%"></i></div><span>100%</span></div><b>42h 30m</b></div>
+<div class="mate-row"><div class="avatar">L</div><div class="mate-id"><b>law***</b><small>민법 객관식 15강</small></div><span class="pill green">출석</span><span class="pill orange">미참여</span><div class="goal-cell"><div class="progress"><i style="width:92%"></i></div><span>92%</span></div><b>36h 10m</b></div>
+<div class="mate-row"><div class="avatar">M</div><div class="mate-id"><b>mega011 (나)</b><small>민법 기본이론 20강</small></div><span class="pill green">출석</span><span class="pill green">참여 완료</span><div class="goal-cell"><div class="progress"><i style="width:40%"></i></div><span>40%</span></div><b>18h 20m</b></div>
+<div class="mate-row"><div class="avatar">B</div><div class="mate-id"><b>blu***</b><small>민법 객관식 10강</small></div><span class="pill green">출석</span><span class="pill green">참여 완료</span><div class="goal-cell"><div class="progress"><i style="width:75%"></i></div><span>75%</span></div><b>29h 45m</b></div>
+<div class="mate-row"><div class="avatar">F</div><div class="mate-id"><b>foc***</b><small>민법 객관식 20강</small></div><span class="pill orange">미출석</span><span class="pill orange">미참여</span><div class="goal-cell"><div class="progress"><i style="width:40%"></i></div><span>40%</span></div><b>16h 05m</b></div>
+</div>
+<div class="card" style="margin-top:16px"><h2>스터디 톡톡</h2><p class="small muted">기상 · 공부 인증 · 근황을 자율적으로 올려요 (완주 조건 아님) · 200자 이내</p><textarea id="feedText" maxlength="200" placeholder="오늘의 기상 · 공부 인증을 글로 남겨보세요."></textarea><div style="display:flex;justify-content:space-between;margin-top:8px"><span class="small muted">사진은 올릴 수 없어요. 교재·강의 내용을 옮겨 적지 말아 주세요.</span><button class="primary" onclick="postFeed()">등록</button></div><div id="feedList"><div class="feed"><div class="feedhead"><b>sora_21</b><span>오늘 07:10</span></div><p>오늘도 6시 기상 완료! 민법 총칙 2강 들을게요</p></div><div class="feed"><div class="feedhead"><b>mega77</b><span>오늘 08:25</span></div><p>특허법 기본이론 12강까지 끝! 같이 힘내요</p></div><div class="feed"><div class="feedhead"><b>mega011 (나)</b><span>오늘 09:10</span></div><p>오늘 강의 2개 완료!</p></div></div></div>
+<div class="card" style="margin-top:16px"><h2>스터디 설정</h2><p class="small muted">7일 연속 출석이 없으면 자리가 반납되고, 5일째에 알림톡으로 미리 안내돼요.</p><button class="outline" onclick="leaveStudy()">이번 기수 그만하기</button></div>
+</div>
+</div>
+</section>
+<div class="foot">본 화면은 제65회 올패스 학습매니저 프론트 정책 검토용 예시 화면입니다. 표시된 학습 데이터는 시연용 샘플입니다.</div>
+</div>
+</main>
+</div>
+</div>
+
+<div class="modalback" id="restTicketModal"><div class="modal">
+<h2>휴무권을 쓸까요?</h2>
+<p>가장 최근 끊긴 날인 10월 18일이 복구돼 연속 기록이 이어져요. (연속 5일 → 13일)</p>
+<p class="notice small">휴무권을 쓴 날은 누적 출석 · 이번 달 개근 · 출석 뱃지에는 포함되지 않아요. 사용 후에는 되돌릴 수 없어요.</p>
+<div class="modalfoot"><button class="outline" onclick="hideModal('restTicketModal')">취소</button><button class="primary" onclick="useRestTicket()">사용하기</button></div>
+</div></div>
+<div class="modalback" id="inquiryModal"><div class="modal inquiry-modal">
+  <h2>사용 문의</h2><p class="muted small">문의는 관리자에게 전달돼요.　·　작성자(mega011)</p>
+  <div class="field"><label>회차</label><select id="inqRound"><option>65회 1차 대비</option><option>65회 2차 대비</option></select></div>
+  <div class="field"><label>구분</label><select id="inqCategory"><option>나의학습</option><option>문제풀이</option><option>스터디메이트</option><option>기타</option></select></div>
+  <div class="field"><label>제목 <span class="muted small">· 50자 이내</span></label><input id="inqTitle" maxlength="50" placeholder="문의 제목을 입력해 주세요."></div>
+  <div class="field"><label>내용 <span class="muted small">· 1,000자 이내</span></label><textarea id="inqBody" maxlength="1000" placeholder="문의 내용을 입력해 주세요." oninput="$('#inqCounter').textContent=this.value.length+' / 1,000자'"></textarea><div class="counter" id="inqCounter">0 / 1,000자</div></div>
+  <div class="alertline">개인정보(주민등록번호, 연락처, 계정 비밀번호 등)를 입력하지 말아 주세요.</div>
+  <div class="field"><label>답변 알림</label><p class="small muted">회원님의 질문에 답변 등록 시 이메일·SMS로 알려드립니다. 정확한 알림을 위해 회원정보를 확인해 주세요.</p><label style="font-weight:500"><input type="checkbox" checked> 이메일 알림　jmson01@example.com</label><label style="font-weight:500"><input type="checkbox" checked> SMS 알림　010-0000-0000</label></div>
+  <div class="modalfoot"><button class="outline" onclick="hideModal('inquiryModal')">취소</button><button class="primary" onclick="submitInquiry()">문의 접수</button></div>
+</div></div>
+<div class="modalback" id="planModal"><div class="modal">
+  <h2 id="planModalTitle">10월 23일 (금)</h2><p class="small muted">다이어리는 오늘을 포함한 최근 7일까지 체크할 수 있어요.</p>
+  <div id="planItems"><div class="task"><label><input type="checkbox" checked> 민법 1강 듣기 <span class="small muted">매일</span></label><button onclick="this.parentElement.remove()">모두 삭제</button></div><div class="task"><label><input type="checkbox"> 특허법 복습 30분 <span class="small muted">매주 월·수·금</span></label><button onclick="this.parentElement.remove()">모두 삭제</button></div><div class="task"><label><input type="checkbox"> 오답노트 다시 풀기 <span class="small muted">당일</span></label><button onclick="this.parentElement.remove()">삭제</button></div></div>
+  <div class="field"><label>할 일 추가 (40자 이내)</label><input id="planInput" maxlength="40" placeholder="할 일을 입력해 주세요."></div>
+  <div class="field"><label>반복 설정</label><select id="planRepeat"><option>당일</option><option>매일 반복</option><option>요일 지정 반복</option></select></div>
+  <div class="small muted">반복 일정을 지우면 이 날부터 이후 일정이 모두 지워지고, 지난 기록은 남아요.</div>
+  <div class="modalfoot"><button class="outline" onclick="hideModal('planModal')">닫기</button><button class="primary" onclick="addPlanToModal()">추가</button></div>
+</div></div>
+
+<div class="modalback" id="todayDiaryModal"><div class="modal"><h2 id="todayDiaryTitle">오늘의 다이어리</h2><p class="small muted">선택한 날짜의 학습 계획과 완료 여부를 확인해 보세요.</p><div id="todayDiaryItems"><div class="task"><label><input type="checkbox" checked> 민법 1강 듣기</label><span class="small muted">매일</span></div><div class="task"><label><input type="checkbox"> 특허법 복습 30분</label><span class="small muted">매주 월·수·금</span></div><div class="task"><label><input type="checkbox"> 오답노트 다시 풀기</label><span class="small muted">당일</span></div><div class="task"><label><input type="checkbox"> 자연과학 기출 10문항</label><span class="small muted">매주 화·목·토</span></div></div><div class="modalfoot"><button class="outline" onclick="hideModal('todayDiaryModal')">닫기</button><button class="primary" onclick="openPlanModal()">계획 편집</button></div></div></div>
+<div class="modalback" id="badgeModal"><div class="modal"><h2>출석 뱃지</h2><p class="muted small">누적 출석일 기준 · 달성한 가장 높은 뱃지 1개가 이름 옆에 표시돼요.</p><div class="badge-row"><div class="badgeitem"><div class="ico">🌱</div><b>7일</b><span class="pill green">획득</span></div><div class="badgeitem"><div class="ico">🔥</div><b>14일</b><span class="pill green">획득</span></div><div class="badgeitem"><div class="ico">⭐</div><b>30일</b><span class="pill green">획득</span></div><div class="badgeitem"><div class="ico">🏆</div><b>100일</b><span class="pill">55일 남음</span></div><div class="badgeitem"><div class="ico">🛡️</div><b>200일</b><span class="pill">잠금</span></div><div class="badgeitem"><div class="ico">👑</div><b>300일</b><span class="pill">잠금</span></div></div>
+<p class="notice small" style="margin-top:14px">하루 10분 이상 수강하거나 오늘의 문제·자연과학 기출을 합쳐 5문항 이상 풀면 출석으로 인정돼요. 휴무권 사용일은 누적 출석일에 포함되지 않아요. 구매 시점에 따라 달성 가능한 뱃지만 노출되며, 마지막 뱃지 보상은 1차 올패스 회원은 2차 올패스 30만원 할인 쿠폰, 2차 올패스 회원은 2차 온라인 GS 50% 할인쿠폰 2매예요. 쿠폰 유효기간은 2달이에요.</p><div class="modalfoot"><button class="primary" onclick="hideModal('badgeModal')">닫기</button></div></div></div>
+<div class="modalback" id="scienceModal"><div class="modal"><div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><div><span class="pill">자연과학 기출 풀이</span><h2 id="scienceModalTitle" style="margin:10px 0 4px">물리 · 2026년 제63회</h2><p class="small muted" style="margin:0">회차당 10문항 · 아래는 화면 확인용 예시 문항입니다.</p></div><button class="outline" onclick="hideModal('scienceModal')">닫기</button></div><div id="scienceQuiz"></div></div></div><div class="modalback" id="leaveModal"><div class="modal"><h2>이번 기수 그만하기</h2><p>그만두면 이번 기수 반에서 빠지고 자리는 중간 합류 대기자에게 넘어가요. 같은 달에 다시 신청할 수 있지만, 그만두거나 퇴장한 이력이 있는 기수는 휴무권이 지급되지 않아요.</p><div class="modalfoot"><button class="outline" onclick="hideModal('leaveModal')">취소</button><button class="primary" onclick="confirmLeave()">그만하기</button></div></div></div>
+<div class="modalback" id="alarmModal"><div class="modal">
+<h2>알림 설정</h2><p class="small muted">알림톡은 선택한 시간에 발송돼요.</p>
+<h3 style="margin:14px 0 6px">필수 알림톡 <span class="small muted">· 해제 불가 (스터디 참여자에게 자동 발송)</span></h3>
+<div class="alarm-row"><span>기수 결과 <small class="muted">매월 1일</small></span><span class="sw on lock"></span></div>
+<div class="alarm-row"><span>다음 기수 신청 오픈 <small class="muted">매월 23일</small></span><span class="sw on lock"></span></div>
+<div class="alarm-row"><span>중간 합류 배정</span><span class="sw on lock"></span></div>
+<div class="alarm-row"><span>자리 반납 사전 안내 <small class="muted">미출석 5일째</small></span><span class="sw on lock"></span></div>
+<h3 style="margin:16px 0 6px">선택 알림톡 <span class="small muted">· 기본 OFF</span></h3>
+<div class="alarm-row"><span>오늘의 문제 리마인드 <small class="muted">그날 풀지 않았을 때만</small></span><span class="sw" id="swQuiz" onclick="toggleAlarm('swQuiz')"></span></div>
+<div class="alarm-row"><span>스터디 출석 리마인드 <small class="muted">스터디 참여 중이며 출석 전일 때만</small></span><span class="sw" id="swStudy" onclick="toggleAlarm('swStudy')"></span></div>
+<h3 style="margin:16px 0 6px">받을 시간</h3>
+<div class="alarm-times"><label><input type="radio" name="alarmTime"> 오전 8시</label><label><input type="radio" name="alarmTime"> 낮 12시</label><label><input type="radio" name="alarmTime" checked> 저녁 6시 (기본)</label><label><input type="radio" name="alarmTime"> 밤 9시</label></div>
+<div class="modalfoot"><button class="outline" onclick="hideModal('alarmModal')">닫기</button><button class="primary" onclick="hideModal('alarmModal');toast('알림 설정을 저장했어요.')">저장</button></div>
+</div></div>
+<div class="modalback" id="consentModal"><div class="modal"><h2>알림톡 수신 동의</h2><p>알림톡 수신에 동의한 것으로 처리돼요.</p><div class="modalfoot"><button class="outline" onclick="hideModal('consentModal')">취소</button><button class="primary" onclick="confirmAlarm()">동의하고 켜기</button></div></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+let pendingSw=null;
+function toggleAlarm(id){const e=$('#'+id);if(e.classList.contains('on')){e.classList.remove('on');return}pendingSw=id;showModal('consentModal')}
+function confirmAlarm(){if(pendingSw)$('#'+pendingSw).classList.add('on');pendingSw=null;hideModal('consentModal')}
+function toast(msg){let t=$('#toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2300)}
+
+function globalTab(which){
+  const intro = which === 'intro';
+  $('#introPage').classList.toggle('hidden', !intro);
+  $('#managerApp').classList.toggle('hidden', intro);
+  $$('[data-global]').forEach(b=>b.classList.toggle('active',b.dataset.global===which));
+  window.scrollTo(0,0);
+}
+$$('[data-global]').forEach(b=>b.addEventListener('click',()=>globalTab(b.dataset.global)));
+
+function go(page,tab){$$('.page').forEach(x=>x.classList.add('hidden'));$('#'+page).classList.remove('hidden');$$('.main-tabs button').forEach(x=>x.classList.toggle('active',x.dataset.page===page));if(page==='problem'&&tab)problemTab(tab);if(page==='study')studyTab(tab||'intro');window.scrollTo(0,0)}
+$$('.main-tabs button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
+function showModal(id){$('#'+id).classList.add('show')}function hideModal(id){$('#'+id).classList.remove('show')}
+const days=['19 월','20 화','21 수','22 목','23 금','24 토','25 일'];$('#diaryMonth').innerHTML=Array.from({length:35},(_,i)=>{let day=i-2;return `<div class="date-cell ${day>0&&day<24?'done':''} ${day===23?'today':''}" ${day>0&&day<=31?`onclick=\"openDiaryForDate('${day}일')\"`:''}>${day>0&&day<=31?day:''}<small>${day>0&&day<24?'● 출석':''}</small></div>`}).join('');
+function addDiary(){let v=prompt('오늘 할 일을 입력해 주세요. (40자 이내)');if(v&&v.trim()){let el=document.createElement('div');el.className='task';el.innerHTML=`<label><input type="checkbox"> ${escapeHtml(v.trim())}</label><button onclick="this.parentElement.remove()">삭제</button>`;$('#diaryList').append(el)}}
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+const questions=[
+{q:'특허권의 존속기간은 특허권을 설정등록한 날부터 특허출원일 후 20년이 되는 날까지이다.',a:'O',why:'특허권의 존속기간은 특허출원일부터 20년이 되는 날까지입니다.'},
+{q:'“발명”이란 자연법칙을 이용하지 않은 기술적 사상의 창작도 포함한다.',a:'X',why:'특허법 제2조 제1호. 발명은 자연법칙을 이용한 기술적 사상의 창작으로서 고도한 것입니다.'},
+{q:'특허출원 전에 국내 또는 국외에서 공지된 발명은 신규성이 인정될 수 있다.',a:'X',why:'출원 전에 공지된 발명은 원칙적으로 신규성이 없습니다.'},
+{q:'특허권자는 업으로서 특허발명을 실시할 권리를 독점한다.',a:'O',why:'특허권의 효력에 관한 기본 원칙입니다.'},
+{q:'특허권의 효력은 특허권 설정등록 전부터 발생한다.',a:'X',why:'특허권은 설정등록에 의해 발생합니다.'}
+];
+let answers={};let quizSubmitted=false;
+const choiceRates=[[9,91],[38,62],[72,28],[15,85],[44,56]];
+function startTodayQuiz(){
+ $('#quizStart').classList.add('hidden');$('#quizArea').classList.remove('hidden');$('#quizQuestions').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function renderQuiz(){
+ $('#quizQuestions').innerHTML=questions.map((q,i)=>`<div class="question"><b>Q${i+1}　특허법 · OX</b><p>${q.q}</p><div class="choices"><button ${quizSubmitted?'disabled':''} class="${answers[i]==='O'?'selected':''}" onclick="answer(${i},'O')">O</button><button ${quizSubmitted?'disabled':''} class="${answers[i]==='X'?'selected':''}" onclick="answer(${i},'X')">X</button></div></div>`).join('');
+ $('#answered').textContent=Object.keys(answers).length+' / 5 문항 입력 완료';$('#submitQuizBtn').disabled=Object.keys(answers).length!==5||quizSubmitted;
+}
+function answer(i,v){if(quizSubmitted)return;answers[i]=v;renderQuiz()}
+renderQuiz();
+function submitQuiz(){
+ if(Object.keys(answers).length!==5){toast('5문항 모두 답변해 주세요.');return}
+ quizSubmitted=true;let score=questions.filter((q,i)=>answers[i]===q.a).length;
+ const dist=[3,9,24,52,78,48],max=Math.max(...dist);
+ const bars=dist.map((n,i)=>`<div class="score-col ${i===score?'mine':''}"><span>${n}명</span><i style="height:${Math.max(6,n/max*76)}px"></i><b>${i}점</b></div>`).join('');
+ const details=questions.map((q,i)=>{let ok=answers[i]===q.a,[o,x]=choiceRates[i],correctIsO=q.a==='O';return `<div class="result-question"><div class="result-qhead"><span class="result-mark ${ok?'':'wrong'}">${ok?'✓':'×'}</span><b>Q${i+1}</b><span class="pill ${ok?'green':'orange'}">${ok?'정답':'오답'}</span></div><p>${q.q}</p><div class="answer-line">내 답 <b>${answers[i]}</b> · 정답 <b>${q.a}</b></div><div class="choice-rate"><span>O 선택</span><div class="rate-track"><i class="${correctIsO?'correct-rate':'wrong-rate'}" style="width:${o}%"></i></div><b>${o}%</b></div><div class="choice-rate"><span>X 선택</span><div class="rate-track"><i class="${!correctIsO?'correct-rate':'wrong-rate'}" style="width:${x}%"></i></div><b>${x}%</b></div><div class="result-explain"><b>해설</b><br>${q.why}</div></div>`}).join('');
+ $('#quizResult').innerHTML=`<div class="quiz-result"><div class="quiz-result-head"><h2 style="margin:0">오늘의 문제 결과</h2><span class="pill green">참여 완료</span></div><div class="answer-chips">${questions.map((q,i)=>`<span class="answer-chip ${answers[i]===q.a?'':'wrong'}">Q${i+1} ${answers[i]===q.a?'O':'X'}</span>`).join('')}</div><div class="score-summary"><div class="score-number"><span class="small muted">맞힌 개수</span><strong>${score}/5</strong><span class="small muted">문항 정답</span></div><div><b>점수 분포</b><div class="score-bars">${bars}</div><div class="small muted" style="text-align:right">첫 풀이 제출자 기준 · 내 점수 구간은 빨간색</div></div></div><p class="notice small">${score===5?'모두 맞혔어요!':`틀린 ${5-score}문항이 오답노트에 저장됐어요.`} · 과목 전 범위에서 출제돼요. 아직 수강하지 않은 단원의 문제일 수 있어요.</p><h3 style="margin-top:20px">문항별 해설 · O/X 선택률</h3>${details}<div style="display:flex;justify-content:flex-end;margin-top:14px"><button class="outline" onclick="toast('연습 풀이는 점수 분포와 출석에 반영되지 않아요.')">다시 풀기 (연습)</button></div></div>`;
+ renderQuiz();$('#quizArea').classList.add('hidden');$('#quizResult').scrollIntoView({behavior:'smooth',block:'start'});toast('문제 풀이 결과를 확인해 보세요.');
+}
+function problemTab(t){$$('.probtab').forEach(x=>x.classList.add('hidden'));$('#'+t+'Tab').classList.remove('hidden');$$('[data-probtab]').forEach(b=>b.classList.toggle('active',b.dataset.probtab===t))}
+$$('[data-probtab]').forEach(b=>b.onclick=()=>problemTab(b.dataset.probtab));
+const scienceData={물리:['알짜힘이 0인 물체의 운동으로 옳은 것은?','① 정지해 있거나 등속 직선 운동을 한다','③'],화학:['원자번호는 원자핵 속 양성자 수와 같다.','① 참','①'],생물:['세포막은 선택적 투과성을 가진다.','① 참','①'],지구과학:['지구의 자전 주기는 약 24시간이다.','① 참','①']};
+let subject='물리';
+function renderYears(){
+ $('#scienceTitle').textContent=subject+' 기출문제';
+ $('#scienceYears').innerHTML=[2026,2025,2024,2023,2022,2021,2020,2019,2018,2017].map((y,i)=>`<button class="science-year-card" onclick="startScience(${y},${63-i})"><b>${y}년</b><span>제${63-i}회 · 10문항</span>${i===0?'<span>최근 기록 7/10</span>':''}</button>`).join('');
+}
+$$('[data-subject]').forEach(b=>b.onclick=()=>{subject=b.dataset.subject;$$('[data-subject]').forEach(x=>x.classList.toggle('active',x===b));renderYears()});
+renderYears();
+function startScience(y,round){
+ let d=scienceData[subject];
+ $('#scienceModalTitle').textContent=`${subject} · ${y}년 제${round}회`;
+ $('#scienceQuiz').innerHTML=`<div class="question" style="margin-top:18px"><b>Q1. ${subject} · 기출 예시</b><p>${d[0]}</p><div class="choices">${(subject==='물리'?['① 반드시 정지해 있다','② 속력이 점점 증가한다','③ 정지해 있거나 등속 직선 운동을 한다','④ 운동 방향이 계속 바뀐다','⑤ 가속도가 일정하게 증가한다']:['① 옳다','② 옳지 않다']).map(x=>`<button onclick="this.parentElement.querySelectorAll('button').forEach(z=>{z.classList.remove('selected');delete z.dataset.pick});this.classList.add('selected');this.dataset.pick='${x.slice(0,1)}'">${x}</button>`).join('')}</div><div id="scienceFeedback"></div><div class="modalfoot"><button class="primary" onclick="gradeScience('${d[2]}')">채점하기</button><button class="outline" onclick="hideModal('scienceModal')">닫기</button></div></div>`;
+ showModal('scienceModal');
+}
+function gradeScience(correct){let pick=$('#scienceQuiz .selected');if(!pick){toast('답을 선택해 주세요.');return}let ok=pick.dataset.pick===correct;$('#scienceFeedback').innerHTML=`<div class="feedback">${ok?'정답이에요!':'오답이에요. 정답은 '+correct+'입니다.'} ${subject==='물리'?'뉴턴의 제1법칙(관성 법칙)에 관한 문항입니다.':'핵심 개념을 다시 확인해 보세요.'} ${ok?'':'<br>오답노트에 저장됐어요.'}</div>`;toast('채점이 완료됐어요.')}
+let wrongs=[{sub:'민법',date:'2026.10.22',q:'미성년자가 법정대리인의 동의 없이 한 법률행위는 무효이다.',mine:'O',ans:'X',why:'민법 제5조 제2항. 취소할 수 있습니다.'},{sub:'특허법',date:'2026.10.21',q:'특허권의 존속기간은 설정등록일부터 20년이다.',mine:'O',ans:'X',why:'특허출원일부터 20년이 되는 날까지입니다.'},{sub:'상표법',date:'2026.10.20',q:'상표권은 설정등록에 의해 발생한다.',mine:'X',ans:'O',why:'상표권은 설정등록에 의해 발생합니다.'}];
+function filterWrong(){let f=$('#wrongFilter').value;let data=wrongs.filter(w=>f==='전체 과목'||w.sub===f);$('#wrongList').innerHTML=data.length?data.map((w,i)=>`<div class="question"><div class="feedhead"><b>${w.sub} · ${w.date}</b><span class="pill">오답</span></div><p>${w.q}</p><div class="small muted">내 답 ${w.mine} · 정답 ${w.ans}</div><div class="feedback">${w.why}</div><div style="margin-top:10px"><button class="soft" onclick="toast('복습 완료로 표시했어요.')">다시 풀기</button></div></div>`).join(''):'<div class="notice">저장된 오답이 없어요.</div>'}filterWrong();
+function studyTab(t){$$('.studyTab').forEach(x=>x.classList.add('hidden'));$('#'+t+'Tab').classList.remove('hidden');$$('[data-studytab]').forEach(b=>b.classList.toggle('active',b.dataset.studytab===t));if(t==='group'){let active=localStorage.getItem('studyApplied')==='yes';$('#myGroup').classList.toggle('hidden',!active);$('#noGroup').classList.toggle('hidden',active)}}
+$$('[data-studytab]').forEach(b=>b.onclick=()=>studyTab(b.dataset.studytab));
+function updateApply(){let type=$('#studyType').value,learn=type==='학습형';$('#subjectRow').classList.toggle('hidden',!learn);$('#goalRow').classList.toggle('hidden',!learn);$('#typeDesc').textContent=learn?'과목을 정하고 이번 달 목표 강좌를 함께 끝내는 학습형 스터디예요. 목표 분량의 90% 이상 수강하면 완주예요.':'하루 1강 듣기, 매일 5문항, 기상 인사 등 자유롭게 나누는 생활형 스터디예요. 완주 기준은 한 달 출석 90%입니다.'}
+let goal=20;function changeGoal(n){goal=Math.max(20,Math.min(100,goal+n));$('#goalNum').textContent=goal;$('#goalRule').textContent=`완주 기준 : ${Math.ceil(goal*.9)}강 이상 수강 (목표의 90%)`}
+function applyStudy(){if(!$('#agree').checked){toast('반원에게 공개되는 항목에 동의해야 참여할 수 있어요.');return}let type=$('#studyType').value,desc=type==='학습형'?`${$('#studySubject').value} · ${$('#studyCourse').value} ${goal}강 목표`:'생활형 · 자유 목표';$('#applyDone').classList.remove('hidden');$('#applyDone').innerHTML=`<b>11월 기수 신청이 완료됐어요!</b><br>${desc}<br>반은 11월 1일 자동 배정되며, 스터디메이트의 스터디룸 탭에서 확인할 수 있어요.`;localStorage.setItem('studyApplied','yes');toast('11월 기수 신청이 완료됐어요.')}
+function postFeed(){let v=$('#feedText').value.trim();if(!v){toast('내용을 입력해 주세요.');return}if(v.length>200){toast('200자 이내로 작성해 주세요.');return}let el=document.createElement('div');el.className='feed';el.innerHTML=`<div class="feedhead"><b>mega011 (나)</b><span>방금 전</span></div><p>${escapeHtml(v)}</p>`;$('#feedList').prepend(el);$('#feedText').value='';toast('스터디 톡톡에 등록했어요.')}
+function leaveStudy(){showModal('leaveModal')}function confirmLeave(){localStorage.removeItem('studyApplied');hideModal('leaveModal');studyTab('group');toast('이번 기수에서 나왔어요.')}
+
+let reportPeriod='week';
+function setReportPeriod(v,btn){reportPeriod=v;let buttons=$$('#home .card.span6 h2 button');buttons.forEach(b=>b.classList.remove('active'));btn.classList.add('active');toast(v==='week'?'이번 주 학습 리포트':'이번 달 학습 리포트');}
+function openInquiry(){showModal('inquiryModal')}
+function useRestTicket(){hideModal('restTicketModal');toast('휴무권 1장을 사용했어요. 연속 출석 기록이 복구됐어요.')}
+function submitInquiry(){
+ const title=$('#inqTitle').value.trim(), body=$('#inqBody').value.trim();
+ if(!title||!body){toast('제목과 내용을 입력해 주세요.');return}
+ if(title.length>50||body.length>1000){toast('입력 글자 수를 확인해 주세요.');return}
+ hideModal('inquiryModal');toast('문의가 접수됐어요. ('+$('#inqCategory').value+')');$('#inqTitle').value='';$('#inqBody').value='';$('#inqCounter').textContent='0 / 1,000자';
+}
+let diaryView='week', diaryOffset=0;
+function setDiaryView(v){
+ diaryView=v;$('#weekViewBtn').classList.toggle('active',v==='week');$('#monthViewBtn').classList.toggle('active',v==='month');
+ $('#diaryWeek').classList.toggle('hidden',v!=='week');$('#diaryMonth').classList.toggle('hidden',v!=='month');
+ $('#diaryPeriod').textContent=v==='week'?(diaryOffset===0?'10.19 ~ 10.25':diaryOffset<0?'10.12 ~ 10.18':'10.26 ~ 11.01'):(diaryOffset===0?'2026년 10월':diaryOffset<0?'2026년 9월':'2026년 11월');
+}
+function shiftDiary(n){diaryOffset=Math.max(-1,Math.min(1,diaryOffset+n));setDiaryView(diaryView)}
+function openPlanModal(){hideModal('todayDiaryModal');$('#planModalTitle').textContent=(window.selectedDiaryDate||'오늘')+' 다이어리 계획';showModal('planModal')}
+function openDiaryForDate(date){window.selectedDiaryDate=date;$('#todayDiaryTitle').textContent=date+' · 오늘의 다이어리';showModal('todayDiaryModal')}
+function addPlanToModal(){let v=$('#planInput').value.trim();if(!v){toast('할 일을 입력해 주세요.');return}let row=document.createElement('div');row.className='task';row.innerHTML=`<label><input type="checkbox"> ${escapeHtml(v)} <span class="small muted">${$('#planRepeat').value}</span></label><button onclick="this.parentElement.remove()">삭제</button>`;$('#planItems').append(row);$('#planInput').value='';toast('계획이 추가됐어요.')}
+
+updateApply();
+</script>
+</body>
+</html>
